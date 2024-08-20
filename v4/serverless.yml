@@ -1,0 +1,24 @@
+service: v4-example
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  timeout: 30
+  region: us-east-1
+  environment:
+    SOME_VARIABLE: ${self:custom.SOME_VARIABLE.${param:arg}, self:custom.SOME_VARIABLE.default}
+
+functions:
+  not-working-lambda-example:
+    handler: index.handler
+    name: simple-example-v4
+
+
+custom:
+  SOME_VARIABLE:
+    default: 'DEFAULT'
+    option1: 'OPTION 1'
+    option2:  'OPTION 2'

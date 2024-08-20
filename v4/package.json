@@ -1,0 +1,14 @@
+{
+  "name": "pkg-two",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.140",
+    "serverless": "4.1.22"
+  },
+  "scripts": {
+    "deploy": "sls deploy",
+    "dev": "sls dev"
+  }
+}
